@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept Art Portfolio | Marfel Fontanilla</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">MARFEL<span class="dot">.</span></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="concept-art.html" class="active">Concept Art</a></li>
+                <li><a href="drawings.html">Drawings</a></li>
+                <li><a href="environment.html">Environment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="nav-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="hero-bg">
+            <div class="grid-bg"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+        <div class="container">
+            <span class="section-tag">Portfolio</span>
+            <h1>Concept <span class="gradient-text">Art</span></h1>
+            <p>Character designs, creature concepts, and visual development for game worlds.</p>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="characters">Characters</button>
+                <button class="filter-btn" data-filter="creatures">Creatures</button>
+                <button class="filter-btn" data-filter="props">Props & Items</button>
+                <button class="filter-btn" data-filter="weapons">Weapons</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Large Featured -->
+                <div class="gallery-item large" data-category="characters">
+                    <div class="art-frame">
+                        <div class="placeholder-art tall">
+                            <span>Featured Character Design</span>
+                            <small>Hero Concept • 2026</small>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Hero Character Concept</h3>
+                        <p>Main protagonist design for an upcoming action RPG project.</p>
+                        <div class="art-meta">
+                            <span>Photoshop</span><span>Character Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="characters">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Villain Design</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Antagonist Concept</h3>
+                        <p>Dark sorcerer character study.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="creatures">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Forest Creature</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Forest Guardian</h3>
+                        <p>Mystical creature design.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="weapons">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Legendary Sword</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Legendary Blade</h3>
+                        <p>Weapon concept for fantasy RPG.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="props">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Magic Item</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Mystic Artifact</h3>
+                        <p>Game item design.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="characters">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>NPC Concept</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Merchant NPC</h3>
+                        <p>Town merchant character.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="creatures">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Boss Monster</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Boss Creature</h3>
+                        <p>Final boss concept art.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="weapons">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Staff Design</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Mage Staff</h3>
+                        <p>Magical weapon concept.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="props">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Treasure</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Treasure Chest</h3>
+                        <p>Reward item design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-prev">‹</button>
+        <button class="lightbox-next">›</button>
+        <div class="lightbox-content">
+            <div class="lightbox-image"></div>
+            <div class="lightbox-info">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marfel Fontanilla.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

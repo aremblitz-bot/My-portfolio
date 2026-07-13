@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawings Portfolio | Marfel Fontanilla</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">MARFEL<span class="dot">.</span></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="concept-art.html">Concept Art</a></li>
+                <li><a href="drawings.html" class="active">Drawings</a></li>
+                <li><a href="environment.html">Environment</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="nav-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="hero-bg">
+            <div class="grid-bg"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <span class="section-tag">Portfolio</span>
+            <h1>My <span class="gradient-text">Drawings</span></h1>
+            <p>Traditional sketches, digital illustrations, and personal art explorations.</p>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="sketches">Sketches</button>
+                <button class="filter-btn" data-filter="digital">Digital Art</button>
+                <button class="filter-btn" data-filter="studies">Studies</button>
+                <button class="filter-btn" data-filter="fanart">Fan Art</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item large" data-category="digital">
+                    <div class="art-frame">
+                        <div class="placeholder-art tall">
+                            <span>Featured Illustration</span>
+                            <small>Digital Art • 2026</small>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Original Character Illustration</h3>
+                        <p>Full character illustration with environment.</p>
+                        <div class="art-meta">
+                            <span>Procreate</span><span>Digital Painting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="sketches">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Gesture Study</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Figure Gesture Study</h3>
+                        <p>30-second gesture drawings practice.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fanart">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Fan Art Piece</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Game Character Fan Art</h3>
+                        <p>Personal fan illustration project.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="studies">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Anatomy Study</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Anatomy Practice</h3>
+                        <p>Daily anatomy study sketches.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="digital">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Portrait Art</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Character Portrait</h3>
+                        <p>Stylized character portrait.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="sketches">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Environment Sketch</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Quick Environment Sketch</h3>
+                        <p>Perspective and mood study.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="studies">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Color Study</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Color Theory Study</h3>
+                        <p>Lighting and color exploration.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fanart">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Anime Style</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Anime-style Fan Art</h3>
+                        <p>Style exploration piece.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="digital">
+                    <div class="art-frame">
+                        <div class="placeholder-art">
+                            <span>Full Illustration</span>
+                        </div>
+                    </div>
+                    <div class="art-info">
+                        <h3>Scene Illustration</h3>
+                        <p>Full scene digital painting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-prev">‹</button>
+        <button class="lightbox-next">›</button>
+        <div class="lightbox-content">
+            <div class="lightbox-image"></div>
+            <div class="lightbox-info">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marfel Fontanilla.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
