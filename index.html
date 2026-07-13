@@ -3,182 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marfel Fontanilla | Game Developer & Concept Artist</title>
-    <meta name="description" content="Game development student specializing in concept art, character design, and environment art.">
-    <link rel="stylesheet" href="css/style.css">
+    <title>MARFEL // Game Dev Portfolio</title>
+    <meta name="description" content="Game development student specializing in concept art, drawings, and environment design.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">◆</span>
-                <span class="logo-text">MARFEL<span class="dot">.</span></span>
+                <span class="logo-prefix">[</span>
+                <span class="logo-text">MARFEL</span>
+                <span class="logo-bracket">]</span>
             </a>
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="concept-art.html">Concept Art</a></li>
-                <li><a href="drawings.html">Drawings</a></li>
-                <li><a href="environment.html">Environment</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="concept-art.html">CONCEPT</a></li>
+                <li><a href="drawings.html">DRAWINGS</a></li>
+                <li><a href="environment.html">ENV</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
+            <button class="nav-toggle"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg">
-            <div class="grid-bg"></div>
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="pulse"></span>
-                Game Dev Student • Open to Opportunities
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    <span>STATUS: AVAILABLE_FOR_HIRE</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="hero-title-prefix">// GAME_DEV.STUDENT</span>
+                    BUILDING WORLDS,<br>
+                    <span class="gradient-text">PIXEL BY PIXEL</span>
+                    <span class="title-cursor"></span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Crafting immersive game experiences through concept art, character design, and atmospheric environments. Currently rendering at BPSU.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#portfolios" class="btn btn-primary">
+                        EXECUTE.PORTFOLIO
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        INIT_CONTACT
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">AI+CAPCUT</div>
+                        <div class="stat-label">SPECIALTY_01</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">CONCEPT</div>
+                        <div class="stat-label">SPECIALTY_02</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">ENV_ART</div>
+                        <div class="stat-label">SPECIALTY_03</div>
+                    </div>
+                </div>
             </div>
-            <h1 class="hero-title">
-                Building Worlds,<br>
-                <span class="gradient-text">One Pixel at a Time</span>
-            </h1>
-            <p class="hero-subtitle">
-                Game development student crafting immersive worlds through concept art, character design, and stunning environments.
-            </p>
-            <div class="hero-cta">
-                <a href="#portfolios" class="btn btn-primary">
-                    Explore My Work
-                    <span class="btn-arrow">→</span>
-                </a>
-                <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll to explore</span>
-            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- Portfolio Categories -->
-    <section id="portfolios" class="portfolio-categories">
+    <section id="portfolios">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">My Portfolios</span>
-                <h2>Creative Specialties</h2>
-                <p>Three disciplines. One vision: bringing game worlds to life.</p>
+                <span class="section-tag">// 001 / PORTFOLIO_DECK</span>
+                <h2>SELECTED_WORKS</h2>
+                <p>Three disciplines. One vision: rendering worlds that play.</p>
             </div>
+            
             <div class="categories-grid">
                 <a href="concept-art.html" class="category-card">
-                    <div class="card-image concept-art-img"></div>
+                    <div class="card-image concept-art-img" data-code="ASSET_001"></div>
                     <div class="card-content">
-                        <div class="card-icon">⚔️</div>
-                        <h3>Concept Art</h3>
-                        <p>Character designs, props, and visual development for game projects.</p>
-                        <span class="card-link">View Portfolio <span class="arrow">→</span></span>
+                        <h3>CONCEPT_ART</h3>
+                        <p>Character designs, creature concepts, and visual development for game projects.</p>
+                        <span class="card-link">LOAD_MODULE</span>
                     </div>
                 </a>
+                
                 <a href="drawings.html" class="category-card">
-                    <div class="card-image drawings-img"></div>
+                    <div class="card-image drawings-img" data-code="ASSET_002"></div>
                     <div class="card-content">
-                        <div class="card-icon">✏️</div>
-                        <h3>Drawings</h3>
-                        <p>Traditional and digital illustrations exploring form, color, and storytelling.</p>
-                        <span class="card-link">View Portfolio <span class="arrow">→</span></span>
+                        <h3>DRAWINGS</h3>
+                        <p>Traditional sketches, digital illustrations, and personal art explorations.</p>
+                        <span class="card-link">LOAD_MODULE</span>
                     </div>
                 </a>
+                
                 <a href="environment.html" class="category-card">
-                    <div class="card-image environment-img"></div>
+                    <div class="card-image environment-img" data-code="ASSET_003"></div>
                     <div class="card-content">
-                        <div class="card-icon">🏔️</div>
-                        <h3>Environment Art</h3>
-                        <p>Atmospheric worlds, level design concepts, and immersive landscapes.</p>
-                        <span class="card-link">View Portfolio <span class="arrow">→</span></span>
+                        <h3>ENVIRONMENT</h3>
+                        <p>Atmospheric worlds, level concepts, and immersive landscapes.</p>
+                        <span class="card-link">LOAD_MODULE</span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Preview -->
     <section class="about-preview">
         <div class="container">
             <div class="about-grid">
-                <div class="about-visual">
-                    <div class="visual-frame">
-                        <div class="placeholder-art">
-                            <span>Your Character Art</span>
-                        </div>
-                        <div class="frame-decoration"></div>
+                <div class="visual-frame">
+                    <div class="placeholder-art">
+                        <span>CHARACTER_PORTRAIT</span>
+                        <small>// UPLOAD YOUR ART</small>
                     </div>
                 </div>
                 <div class="about-content">
-                    <span class="section-tag">About Me</span>
-                    <h2>Hi, I'm Marfel</h2>
+                    <span class="section-tag">// 002 / PLAYER_PROFILE</span>
+                    <h2>THE_DEVELOPER</h2>
                     <p>
-                        A passionate game development student with a love for visual storytelling. 
-                        I specialize in concept art, character design, and environment art — bringing 
-                        imagination to life through pixels and brushstrokes.
-                    </p>
-                    <p>
-                        Currently studying Entertainment and Multimedia Computing, I'm always exploring 
-                        new techniques, tools, and styles to push my creative boundaries.
+                        Game development student with a passion for visual storytelling. 
+                        Specializing in concept art, character design, and environment art — 
+                        always exploring new techniques to push creative boundaries.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Photoshop</span>
-                        <span class="tech-tag">Procreate</span>
-                        <span class="tech-tag">Blender</span>
-                        <span class="tech-tag">Unity</span>
-                        <span class="tech-tag">Unreal Engine</span>
-                        <span class="tech-tag">Clip Studio Paint</span>
+                        <span class="tech-tag">PHOTOSHOP</span>
+                        <span class="tech-tag">PROCREATE</span>
+                        <span class="tech-tag">BLENDER</span>
+                        <span class="tech-tag">UNITY</span>
+                        <span class="tech-tag">UNREAL</span>
                     </div>
-                    <a href="about.html" class="btn btn-outline">Learn More About Me</a>
+                    <a href="about.html" class="btn btn-secondary">
+                        VIEW_FULL_PROFILE
+                        <span class="btn-arrow">→</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="index.html" class="logo">
-                        <span class="logo-icon">◆</span>
-                        <span class="logo-text">MARFEL<span class="dot">.</span></span>
-                    </a>
-                    <p>Game dev student crafting worlds through art.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Portfolios</h4>
-                    <ul>
-                        <li><a href="concept-art.html">Concept Art</a></li>
-                        <li><a href="drawings.html">Drawings</a></li>
-                        <li><a href="environment.html">Environment Art</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="contact.html">Contact Me</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">ArtStation</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Marfel Fontanilla. Built with passion 🎮</p>
+                <p>&copy; 2026 MARFEL_FONTANILLA // BUILD_v2.0 // ALL_SYSTEMS_OPERATIONAL</p>
             </div>
         </div>
     </footer>
