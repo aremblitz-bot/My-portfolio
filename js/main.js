@@ -1,79 +1,29 @@
-// ===================================
-// CUSTOM CURSOR
-// ===================================
-const cursor = document.querySelector('.cursor');
-const follower = document.querySelector('.cursor-follower');
-let mouseX = 0, mouseY = 0;
-let followerX = 0, followerY = 0;
+// ============================================================
+// GAME DEV PORTFOLIO - SYSTEM CONTROLLER
+// ============================================================
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    if (cursor) {
-        cursor.style.left = mouseX + 'px';
-        cursor.style.top = mouseY + 'px';
-    }
-});
-
-function animateFollower() {
-    followerX += (mouseX - followerX) * 0.15;
-    followerY += (mouseY - followerY) * 0.15;
-    if (follower) {
-        follower.style.left = (followerX - 17) + 'px';
-        follower.style.top = (followerY - 17) + 'px';
-    }
-    requestAnimationFrame(animateFollower);
-}
-animateFollower();
-
-// Cursor hover effects
-document.querySelectorAll('a, button, .gallery-item, .category-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        if (follower) {
-            follower.style.width = '60px';
-            follower.style.height = '60px';
-            follower.style.borderColor = '#ec4899';
-        }
-    });
-    el.addEventListener('mouseleave', () => {
-        if (follower) {
-            follower.style.width = '35px';
-            follower.style.height = '35px';
-            follower.style.borderColor = '#8b5cf6';
-        }
-    });
-});
-
-// ===================================
-// MOBILE NAVIGATION
-// ===================================
+// Mobile Navigation
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
     });
 
-    // Close menu on link click
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
         });
     });
 }
 
-// ===================================
-// GALLERY FILTER
-// ===================================
+// Gallery Filter
 const filterBtns = document.querySelectorAll('.filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Update active button
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
@@ -97,9 +47,7 @@ filterBtns.forEach(btn => {
     });
 });
 
-// ===================================
-// LIGHTBOX
-// ===================================
+// Lightbox
 const lightbox = document.querySelector('.lightbox');
 const lightboxClose = document.querySelector('.lightbox-close');
 const lightboxPrev = document.querySelector('.lightbox-prev');
@@ -151,8 +99,7 @@ function prevItem() {
     updateLightbox();
 }
 
-// Open lightbox on gallery item click
-galleryItems.forEach((item, index) => {
+galleryItems.forEach((item) => {
     item.addEventListener('click', () => {
         updateVisibleItems();
         const realIndex = visibleItems.indexOf(item);
@@ -177,9 +124,7 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') prevItem();
 });
 
-// ===================================
-// SCROLL ANIMATIONS
-// ===================================
+// Scroll Animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -193,15 +138,12 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Add fade-in class to elements
-document.querySelectorAll('.category-card, .gallery-item, .service-item, .timeline-item, .info-item').forEach(el => {
+document.querySelectorAll('.category-card, .gallery-item, .service-item, .timeline-item, .info-item, .contact-method').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
 
-// ===================================
-// NAVBAR SCROLL EFFECT
-// ===================================
+// Navbar scroll effect
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
@@ -210,46 +152,63 @@ window.addEventListener('scroll', () => {
     
     if (navbar) {
         if (currentScroll > 100) {
-            navbar.style.background = 'rgba(10, 10, 15, 0.9)';
-            navbar.style.borderBottomColor = 'rgba(139, 92, 246, 0.2)';
+            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.1)';
         } else {
-            navbar.style.background = 'rgba(10, 10, 15, 0.7)';
-            navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.08)';
+            navbar.style.boxShadow = 'none';
         }
     }
     
     lastScroll = currentScroll;
 });
 
-// ===================================
-// SMOOTH SCROLL FOR ANCHOR LINKS
-// ===================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        const target = document.querySelector(href);
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
-
-// ===================================
-// FORM SUBMISSION HANDLER
-// ===================================
-const contactForm = document.querySelector('.contact-form');
+// Web3Forms Contact Form
+const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        // Form will submit to Formspree automatically
-        // Add a small loading state
-        const btn = contactForm.querySelector('button[type="submit"]');
-        if (btn) {
-            btn.innerHTML = 'Sending...';
-            btn.disabled = true;
+    const formResult = document.getElementById('form-result');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'TRANSMITTING...';
+        submitBtn.disabled = true;
+        formResult.innerHTML = '';
+        
+        const formData = new FormData(contactForm);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+        
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                formResult.innerHTML = '<p style="color: var(--neon-green); font-weight: 600;">> TRANSMISSION_SUCCESS // Message received. Response incoming.</p>';
+                contactForm.reset();
+            } else {
+                formResult.innerHTML = '<p style="color: var(--neon-red); font-weight: 600;">> ERROR_500 // Transmission failed. Direct contact: marfelelfontanilla@gmail.com</p>';
+            }
+        } catch (error) {
+            formResult.innerHTML = '<p style="color: var(--neon-red); font-weight: 600;">> NETWORK_ERROR // Connection failed. Direct contact: marfelelfontanilla@gmail.com</p>';
+        } finally {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            
+            setTimeout(() => {
+                formResult.innerHTML = '';
+            }, 6000);
         }
     });
 }
 
-console.log('🎮 Portfolio loaded successfully!');
+console.log('%c> SYSTEM_BOOT_COMPLETE', 'color: #00f0ff; font-weight: bold; font-family: monospace;');
+console.log('%c> PORTFOLIO_v2.0 // GAME_DEV_THEME', 'color: #ff006e; font-family: monospace;');
