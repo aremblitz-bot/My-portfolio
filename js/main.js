@@ -81,6 +81,8 @@ const lightboxPrev = document.querySelector('.lightbox-prev');
 const lightboxNext = document.querySelector('.lightbox-next');
 const lightboxTitle = document.querySelector('.lightbox-info h3');
 const lightboxDesc = document.querySelector('.lightbox-info p');
+const lightboxImageContainer = document.querySelector('.lightbox-image');
+
 
 let currentIndex = 0;
 let visibleItems = [];
@@ -95,9 +97,23 @@ function openLightbox(index) {
     updateVisibleItems();
     currentIndex = index;
     updateLightbox();
+    
+    // Show the image from the gallery item in the lightbox
+    const item = visibleItems[currentIndex];
+    if (item) {
+        const img = item.querySelector('img.gallery-img');
+        if (img) {
+            lightboxImageContainer.innerHTML = `<img src="${img.src}" alt="${img.alt}" style="width:100%; height:100%; object-fit:contain;">`;
+        } else {
+            // Fallback to placeholder text if no image
+            lightboxImageContainer.innerHTML = '<span style="color:var(--text-muted); font-family:var(--font-mono);">NO_ASSET_LOADED</span>';
+        }
+    }
+    
     if (lightbox) lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
+
 
 function closeLightbox() {
     if (lightbox) lightbox.classList.remove('active');
