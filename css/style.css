@@ -440,7 +440,7 @@ body::after {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1rem;
     margin-top: 3rem;
-    padding: 1.5rem;
+    padding: 2.5rem 1.5rem 1.5rem; /* Extra top padding */
     background: var(--bg-panel);
     border: 1px solid var(--border-line);
     position: relative;
@@ -449,15 +449,18 @@ body::after {
 .hero-stats::before {
     content: 'SYS.STATUS';
     position: absolute;
-    top: -10px;
-    left: 20px;
+    top: -12px;
+    left: 30px;
     background: var(--bg-void);
-    padding: 0 10px;
+    padding: 0 12px;
     color: var(--neon-cyan);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     letter-spacing: 0.1em;
+    z-index: 10;
+    white-space: nowrap; /* Prevents text wrapping */
 }
+
 
 .stat {
     text-align: center;
@@ -1111,20 +1114,25 @@ section {
     background: var(--bg-panel);
     border: 1px solid var(--border-line);
     position: relative;
-    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+    padding-top: 1.5rem; /* Space for the title */
+    /* Removed clip-path so title can extend outside */
 }
 
 .quick-info::before {
     content: '// USER_DATA.json';
     position: absolute;
-    top: -10px;
-    left: 20px;
+    top: -12px;
+    left: 30px;
     background: var(--bg-void);
-    padding: 0 10px;
+    padding: 0 12px;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--neon-cyan);
+    letter-spacing: 0.1em;
+    z-index: 10;
+    white-space: nowrap; /* Prevents text wrapping */
 }
+
 
 .info-item {
     display: flex;
@@ -1498,23 +1506,26 @@ section {
 .contact-form-wrapper {
     background: var(--bg-panel);
     border: 1px solid var(--border-line);
-    padding: 2.5rem;
+    padding: 3.5rem 2.5rem 2.5rem; /* Extra top padding for title */
     position: relative;
-    clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+    /* Removed clip-path so title can extend outside */
 }
 
 .contact-form-wrapper::before {
     content: '// CONTACT_FORM.exe';
     position: absolute;
-    top: -10px;
-    left: 20px;
+    top: -12px;
+    left: 30px;
     background: var(--bg-void);
-    padding: 0 10px;
+    padding: 0 12px;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--neon-cyan);
     letter-spacing: 0.1em;
+    z-index: 10;
+    white-space: nowrap; /* Prevents text wrapping */
 }
+
 
 .contact-form {
     display: flex;
