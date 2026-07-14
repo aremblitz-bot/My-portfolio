@@ -18,34 +18,62 @@ if (navToggle && navMenu) {
     });
 }
 
-// Gallery Filter
+// ===================================
+// GALLERY FILTER (SMOOTH VERSION)
+// ===================================
 const filterBtns = document.querySelectorAll('.filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
+// Set initial state
+galleryItems.forEach(item => {
+    item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    item.style.opacity = '1';
+    item.style.transform = 'scale(1)';
+});
+
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+        // Update active button
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
         const filter = btn.dataset.filter;
 
+        // PHASE 1: Fade out all items
         galleryItems.forEach(item => {
-            if (filter === 'all' || item.dataset.category === filter) {
-                item.style.display = '';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'scale(1)';
-                }, 50);
-            } else {
-                item.style.opacity = '0';
-                item.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
-            }
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.9)';
         });
+
+        // PHASE 2: After fade out, hide/show items (no flash!)
+        setTimeout(() => {
+            galleryItems.forEach(item => {
+                const shouldShow = filter === 'all' || item.dataset.category === filter;
+                
+                if (shouldShow) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // PHASE 3: Force reflow, then fade in visible items
+            void galleryItems[0]?.offsetHeight; // Trigger reflow
+
+            // Small delay before fade in for smoothness
+            setTimeout(() => {
+                galleryItems.forEach(item => {
+                    const shouldShow = filter === 'all' || item.dataset.category === filter;
+                    if (shouldShow) {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }
+                });
+            }, 50);
+        }, 400); // Wait for fade out to complete
     });
 });
+
 
 // Lightbox
 const lightbox = document.querySelector('.lightbox');
