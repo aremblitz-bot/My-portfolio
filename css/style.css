@@ -1791,3 +1791,23 @@ section {
 .btn-secondary:hover {
     animation: glitch 0.3s;
 }
+
+/* Add this anywhere in your CSS */
+.contact-form-wrapper::before,
+.lightbox-content::before,
+.quick-info::before,
+.hero-stats::before {
+    animation: title-pulse 3s ease-in-out infinite;
+}
+
+@keyframes title-pulse {
+    0%, 100% { 
+        opacity: 1; 
+        text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+    }
+    50% { 
+        opacity: 0.7; 
+        text-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
+    }
+}
+
