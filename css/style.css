@@ -960,22 +960,26 @@ section {
     gap: 1rem;
     background: var(--bg-panel);
     border: 1px solid var(--neon-cyan);
-    padding: 2rem;
+    padding: 3.5rem 2rem 2rem; /* Increased top padding */
     position: relative;
-    clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+    margin-top: 20px; /* Push down to make room for title above */
 }
 
 .lightbox-content::before {
     content: '// ASSET_VIEWER.exe';
     position: absolute;
     top: -10px;
-    left: 20px;
+    left: 40px;
     background: var(--bg-void);
-    padding: 0 10px;
+    padding: 0 12px;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.8rem; /* Slightly bigger to be readable */
     color: var(--neon-cyan);
     letter-spacing: 0.1em;
+    z-index: 100; /* Higher z-index */
+    white-space: nowrap;
+    overflow: visible; /* Ensure not clipped */
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
 .lightbox-image {
