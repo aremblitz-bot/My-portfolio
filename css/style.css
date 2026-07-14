@@ -770,7 +770,7 @@ section {
 .gallery-item {
     background: var(--bg-card);
     border: 1px solid var(--border-line);
-    transition: all 0.4s ease;
+    transition: all 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
