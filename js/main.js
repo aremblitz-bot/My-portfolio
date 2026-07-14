@@ -33,46 +33,45 @@ galleryItems.forEach(item => {
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Update active button
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
         const filter = btn.dataset.filter;
 
-        // PHASE 1: Fade out all items
+        // PHASE 1: Fade out all
         galleryItems.forEach(item => {
             item.style.opacity = '0';
             item.style.transform = 'scale(0.9)';
         });
 
-        // PHASE 2: After fade out, hide/show items (no flash!)
+        // PHASE 2: After fade out, update display
         setTimeout(() => {
+            const visibleItems = [];
+            
             galleryItems.forEach(item => {
                 const shouldShow = filter === 'all' || item.dataset.category === filter;
                 
                 if (shouldShow) {
                     item.style.display = '';
+                    visibleItems.push(item);
                 } else {
                     item.style.display = 'none';
                 }
             });
 
-            // PHASE 3: Force reflow, then fade in visible items
-            void galleryItems[0]?.offsetHeight; // Trigger reflow
+            void galleryItems[0]?.offsetHeight; // Reflow
 
-            // Small delay before fade in for smoothness
-            setTimeout(() => {
-                galleryItems.forEach(item => {
-                    const shouldShow = filter === 'all' || item.dataset.category === filter;
-                    if (shouldShow) {
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }
-                });
-            }, 50);
-        }, 400); // Wait for fade out to complete
+            // PHASE 3: Stagger fade in (50ms delay between each)
+            visibleItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, index * 80); // 80ms between each item
+            });
+        }, 400);
     });
 });
+
 
 
 // Lightbox
