@@ -1004,18 +1004,23 @@ section {
 .lightbox-close,
 .lightbox-prev,
 .lightbox-next {
-    position: absolute;
+    position: fixed;
     background: var(--bg-card);
-    border: 1px solid var(--neon-cyan);
+    border: 2px solid var(--neon-cyan);
     color: var(--neon-cyan);
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: var(--font-mono);
     font-weight: 700;
     transition: all 0.3s ease;
-    clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-glow-cyan), 0 4px 20px rgba(0, 0, 0, 0.5);
+    clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
 }
 
 .lightbox-close:hover,
@@ -1023,12 +1028,55 @@ section {
 .lightbox-next:hover {
     background: var(--neon-cyan);
     color: var(--bg-void);
-    box-shadow: var(--shadow-glow-cyan);
+    box-shadow: var(--shadow-glow-cyan), 0 0 40px rgba(0, 240, 255, 0.8);
+    transform: scale(1.1);
 }
 
-.lightbox-close { top: -25px; right: -25px; }
-.lightbox-prev { left: -25px; top: 50%; transform: translateY(-50%); }
-.lightbox-next { right: -25px; top: 50%; transform: translateY(-50%); }
+.lightbox-prev:hover { transform: scale(1.1) translateX(-3px); }
+.lightbox-next:hover { transform: scale(1.1) translateX(3px); }
+
+/* Position buttons safely within viewport */
+.lightbox-close { 
+    top: 20px; 
+    right: 20px; 
+}
+
+.lightbox-prev { 
+    left: 20px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+.lightbox-next { 
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+/* On mobile, move them inside or make smaller */
+@media (max-width: 768px) {
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    .lightbox-close { top: 10px; right: 10px; }
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+}
+
+@media (max-width: 480px) {
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
 
 /* ============================================================
    ABOUT PAGE
