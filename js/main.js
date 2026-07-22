@@ -101,7 +101,7 @@ function openLightbox(index) {
     // Show the image from the gallery item in the lightbox
     const item = visibleItems[currentIndex];
     if (item) {
-        const img = item.querySelector('img.art-image');
+        const img = item.querySelector('img.gallery-img');
         if (img) {
             lightboxImageContainer.innerHTML = `<img src="${img.src}" alt="${img.alt}" style="width:100%; height:100%; object-fit:contain;">`;
         } else {
@@ -128,6 +128,14 @@ function updateLightbox() {
     const desc = item.querySelector('p')?.textContent || '';
     if (lightboxTitle) lightboxTitle.textContent = title;
     if (lightboxDesc) lightboxDesc.textContent = desc;
+    
+    // Update the image too!
+    const img = item.querySelector('img.gallery-img');
+    if (img && lightboxImageContainer) {
+        lightboxImageContainer.innerHTML = `<img src="${img.src}" alt="${img.alt}" style="width:100%; height:100%; object-fit:contain;">`;
+    } else {
+        lightboxImageContainer.innerHTML = '<span style="color:var(--text-muted); font-family:var(--font-mono);">NO_ASSET_LOADED</span>';
+    }
 }
 
 function nextItem() {
