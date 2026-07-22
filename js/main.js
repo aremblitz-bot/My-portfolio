@@ -101,7 +101,7 @@ function openLightbox(index) {
     // Show the image from the gallery item in the lightbox
     const item = visibleItems[currentIndex];
     if (item) {
-        const img = item.querySelector('img.gallery-img');
+        const img = item.querySelector('img.art-image');
         if (img) {
             lightboxImageContainer.innerHTML = `<img src="${img.src}" alt="${img.alt}" style="width:100%; height:100%; object-fit:contain;">`;
         } else {
