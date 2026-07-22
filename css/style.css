@@ -1842,7 +1842,7 @@ section {
 
 /* Portrait images - taller frame */
 .gallery-item.portrait .art-frame {
-    height: 350px; /* taller to fit portrait images */
+    height: 400px; /* taller to fit portrait images */
 }
 
 .gallery-img {
@@ -1851,5 +1851,11 @@ section {
     object-fit: cover;
     display: block;
     border-radius: 4px;
+}
+
+/* For portrait images, use contain to show the FULL image */
+.gallery-item.portrait .gallery-img {
+    object-fit: contain;
+    background-color: #0a0e17; /* Dark background for empty bars */
 }
 
