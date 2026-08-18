@@ -163,6 +163,12 @@ body::after {
     letter-spacing: 0.05em;
 }
 
+.logo-img {
+    height: 1.8rem;
+    width: auto;
+    display: block;
+}
+
 .logo-prefix {
     color: var(--neon-cyan);
     font-size: 0.85rem;
