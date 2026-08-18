@@ -132,16 +132,31 @@ body::after {
     content: '';
     position: absolute;
     top: 0;
-    width: 30px;
+    width: 3px;
     height: 100%;
-    background: var(--neon-cyan);
-    opacity: 0.6;
-    box-shadow: var(--shadow-glow-cyan);
-    display: none;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--neon-cyan) 18%,
+        #ffffff 25%,
+        var(--neon-cyan) 32%,
+        transparent 50%,
+        transparent 100%
+    );
+    background-size: 100% 220%;
+    background-position: 0% -120%;
+    animation: navbarScan 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    filter: drop-shadow(0 0 4px var(--neon-cyan)) drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+    opacity: 0.85;
 }
 
 .navbar::before { left: 0; }
-.navbar::after { right: 0; }
+.navbar::after  { right: 0; animation-delay: 1.3s; }
+
+@keyframes navbarScan {
+    0%   { background-position: 0% -120%; }
+    100% { background-position: 0% 220%; }
+}
 
 .nav-container {
     max-width: 1280px;
