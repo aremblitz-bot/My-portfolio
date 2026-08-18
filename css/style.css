@@ -137,6 +137,7 @@ body::after {
     background: var(--neon-cyan);
     opacity: 0.6;
     box-shadow: var(--shadow-glow-cyan);
+    display: none;
 }
 
 .navbar::before { left: 0; }
